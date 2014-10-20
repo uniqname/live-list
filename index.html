@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="bower_components/polymer-platform/platform.js"></script>
+	</head>
+	<body>
+
+		<ul is="live-list" endpoint="/update" sync="2000">
+			<li>One</li>
+			<li>Two</li>
+			<li>Three</li>
+			<li>Four</li>
+			<li>Five</li>
+			<b>b</b>
+		</ul>
+
+		<template id="live-list-template">
+			<content select="li"></content>
+		</template>
+		<script src="live-list.js"></script>
+	</body>
+</html>
