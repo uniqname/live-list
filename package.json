@@ -1,0 +1,32 @@
+{
+  "name": "live-list",
+  "version": "1.0.0",
+  "description": "A server updated web component list",
+  "main": "live-list.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uniqname/live-list.git"
+  },
+  "keywords": [
+    "web",
+    "component"
+  ],
+  "author": "Cory Brown",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uniqname/live-list/issues"
+  },
+  "homepage": "https://github.com/uniqname/live-list",
+  "devDependencies": {
+    "browser-sync": "^1.5.8",
+    "gulp": "^3.8.9",
+    "gulp-browserify": "^0.5.0",
+    "gulp-rename": "^1.2.0"
+  },
+  "dependencies": {
+    "ws": "^0.4.32"
+  }
+}
