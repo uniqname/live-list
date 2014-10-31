@@ -56,7 +56,10 @@ var render = function rendre(template, data) {
 				if (itm === 'this') {
 					return data;
 				} else {
-					return data[itm] || '';
+					return itm.split(/\.|\//g).reduce(function (val, segment) {
+						return (val && val[segment]) || '';
+					}, data);
+					// return data[itm] || '';
 				}
 			});
 			replacements.forEach(function (item, idx) {
@@ -132,7 +135,6 @@ module.exports = render;
 				onEndpointChange.apply(this, vals);
 				if (this.frequency) {
 
-					console.log('getting ready to clear', this.intervalVal);
 					this.intervalVal = interval(this.intervalVal, function () {
 						syncUp(thisLiveList);
 					}, thisLiveList.frequency * 1000);
@@ -216,20 +218,13 @@ module.exports = function (endpoint) {
 }
 },{"./promises.js":5,"./xhr.js":7}],4:[function(require,module,exports){
 var beginInterval = function (prevInterval, fn, time) {
-		var i;
-		
 		endInterval(prevInterval);
 
 		if (time && time > 0) {
-			i = window.setInterval(fn, time);
+			return window.setInterval(fn, time);
 		}
-
-		console.log('interval set to ', i);
-		
-		return i;
 	},
 	endInterval= function (prevInterval) {
-		console.log('clearing interval: ', prevInterval);
 		clearInterval(prevInterval);
 
 		return null;

@@ -1,0 +1,26 @@
+{
+  "name": "live-list",
+  "main": "live-list.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/uniqname/live-list",
+  "authors": [
+    "Cory Brown <oh.wise.man@gmail.com>"
+  ],
+  "description": "A self updating unordered list",
+  "keywords": [
+    "Web",
+    "Component",
+    "List"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer-platform": "~0.4.2"
+  }
+}

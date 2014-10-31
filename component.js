@@ -62,7 +62,6 @@
 				onEndpointChange.apply(this, vals);
 				if (this.frequency) {
 
-					console.log('getting ready to clear', this.intervalVal);
 					this.intervalVal = interval(this.intervalVal, function () {
 						syncUp(thisLiveList);
 					}, thisLiveList.frequency * 1000);

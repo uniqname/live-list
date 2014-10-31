@@ -55,7 +55,10 @@ var render = function rendre(template, data) {
 				if (itm === 'this') {
 					return data;
 				} else {
-					return data[itm] || '';
+					return itm.split(/\.|\//g).reduce(function (val, segment) {
+						return (val && val[segment]) || '';
+					}, data);
+					// return data[itm] || '';
 				}
 			});
 			replacements.forEach(function (item, idx) {
